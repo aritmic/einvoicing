@@ -1,5 +1,5 @@
 {
-    "name": "josemmo/einvoicing",
+    "name": "aritmic/einvoicing",
     "description": "Library for reading and creating European-compliant electronic invoices (EN 16931)",
     "keywords": [
         "invoicing",
@@ -9,12 +9,12 @@
         "cii"
     ],
     "license": "MIT",
-    "homepage": "https://github.com/josemmo/einvoicing",
+    "homepage": "https://github.com/aritmic/einvoicing",
     "authors": [
         {
             "name": "José Miguel Moreno",
             "email": "josemmo@pm.me",
-            "homepage": "https://github.com/josemmo"
+            "homepage": "https://github.com/aritmic"
         }
     ],
     "autoload": {
