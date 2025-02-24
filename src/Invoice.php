@@ -278,6 +278,7 @@ class Invoice {
     use PeriodTrait;
     use InvoiceValidationTrait;
     use PrecedingInvoiceReferencesTrait;
+    use LegalMonetaryTotalTrait;
 
     /**
      * Invoice constructor
