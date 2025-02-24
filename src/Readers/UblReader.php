@@ -263,6 +263,18 @@ class UblReader extends AbstractReader {
             $invoice->addLine($this->parseInvoiceLine($node, $taxExemptions));
         }
 
+        // Tax Exclusive amount
+        $taxExclusiveAmount = $xml->get("{{$cac}}LegalMonetaryTotal/{{$cbc}}TaxExclusiveAmount");
+        if ($taxExclusiveAmount !== null) {
+            $invoice->setTaxExclusiveAmount((float) $taxExclusiveAmount->asText());
+        }
+
+        // Tax Inclusive amount
+        $taxInclusiveAmount = $xml->get("{{$cac}}LegalMonetaryTotal/{{$cbc}}TaxInclusiveAmount");
+        if ($taxExclusiveAmount !== null) {
+            $invoice->setTaxInclusiveAmount((float) $taxInclusiveAmount->asText());
+        }
+
         return $invoice;
     }
 
