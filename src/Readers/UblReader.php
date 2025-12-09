@@ -769,6 +769,14 @@ class UblReader extends AbstractReader {
             $line->setUnit($quantityNode->element()->getAttribute('unitCode'));
         }
 
+        // LineExtensionAmount
+        $netAmountNode = $xml->get("{{$cbc}}LineExtensionAmount");
+        if ($netAmountNode !== null) {
+            if (floatval($netAmountNode->asText()) < 0 && $line->getQuantity()) {
+                $line->setQuantity(-1 * abs($line->getQuantity()));
+            }
+        }
+
         // BT-133: Buyer accounting reference
         $buyerAccountingReferenceNode = $xml->get("{{$cbc}}AccountingCost");
         if ($buyerAccountingReferenceNode !== null) {
